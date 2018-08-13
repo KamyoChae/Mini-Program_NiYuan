@@ -1,0 +1,29 @@
+<!--index.wxml ffeb3b style="width:{{width}}; height:{{height}}; border-radius:{{boderRadius}};opacity:{{opacity}}"-->
+<view class="container">
+  <image class='ima-bg' src='../../icon/bg.jpg' mode='aspectFill'></image>
+
+  <view class='wellcome' style='display:{{display}}'>
+    <view class='animated'>
+      <view></view>
+      <view></view>
+    </view>
+    <view class="usermotto">
+      <text class="user-motto">{{motto}}</text>
+    </view>
+
+    <view class="userinfo">
+      <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" bindtap='setStorageIn'> 开启旅程</button>
+      <block wx:else>
+        <view class='userIcon'>
+          <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+          <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+        </view>
+      </block>
+    </view>
+
+  </view>
+
+<view class='index'>
+
+</view>
+</view>

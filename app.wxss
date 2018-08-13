@@ -1,0 +1,60 @@
+/**app.wxss**/
+
+page {
+  font-size: 16pt;
+}
+
+.container {
+  position: absolute;
+}
+
+.animated {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+}
+
+.animated view:nth-of-type(1) {
+  border: 3rpx solid rgb(109, 24, 95);
+  animation: mymove1 2s infinite alternate-reverse ease-in-out;
+}
+
+.animated view {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 0;
+  opacity: 0;
+  position: absolute;
+}
+
+.animated view:nth-of-type(2) {
+  outline: 3rpx solid rgb(109, 24, 95);
+  outline-offset: 0;
+  animation: mymove1 2s infinite alternate-reverse ease-in-out 0.5s;
+}
+
+@keyframes mymove1 {
+  0% {
+    left: 5vw;
+    opacity: 0;
+    transform: rotate(0deg);
+    border-radius: 0;
+  }
+
+  50% {
+    width: 60rpx;
+    height: 60rpx;
+    bottom: 25vh;
+    left: calc(50vw - 5vw);
+    opacity: 1;
+    transform: rotate(360deg);
+    border-radius: 50%;
+  }
+
+  100% {
+    left: calc(100vw - 105rpx);
+    opacity: 0;
+    transform: rotate(720deg);
+    border-radius: 0%;
+  }
+}
