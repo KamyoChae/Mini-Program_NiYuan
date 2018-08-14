@@ -1,0 +1,21 @@
+.swiper{
+  width: 100vw;
+  min-height: 100vh;
+  position: relative;
+}
+.swiper-view{
+  position: relative;
+  width: 95vw;
+  margin: auto;
+  box-sizing: border-box;
+  padding: 5vw;
+  border-radius: 8rpx;
+ background: #fff;
+}
+
+.comic-title{
+  min-height: 180rpx;
+  margin: auto;
+  border-radius: 8rpx;
+  border: 1rpx dashed #353535;
+}

@@ -2,7 +2,8 @@
   "pages":[
     "pages/index/index",
     "pages/logs/logs",
-    "pages/music/music"
+    "pages/music/music",
+    "pages/comic/comic"
   ],
   "window":{
     "backgroundTextStyle":"light",

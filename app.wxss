@@ -2,6 +2,7 @@
 
 page {
   font-size: 16pt;
+  background: #353535;
 }
 
 .container {
@@ -15,7 +16,7 @@ page {
 }
 
 .animated view:nth-of-type(1) {
-  border: 3rpx solid rgb(109, 24, 95);
+  border: 3rpx solid #fff;
   animation: mymove1 2s infinite alternate-reverse ease-in-out;
 }
 
@@ -28,7 +29,7 @@ page {
 }
 
 .animated view:nth-of-type(2) {
-  outline: 3rpx solid rgb(109, 24, 95);
+  outline: 3rpx solid #fff;
   outline-offset: 0;
   animation: mymove1 2s infinite alternate-reverse ease-in-out 0.5s;
 }

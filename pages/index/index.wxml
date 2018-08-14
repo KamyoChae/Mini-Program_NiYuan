@@ -13,12 +13,9 @@
 
     <view class="userinfo">
       <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" bindtap='setStorageIn'> 开启旅程</button>
-      <block wx:else>
-        <view class='userIcon'>
-          <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-          <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-        </view>
-      </block>
+
+
+
     </view>
 
   </view>
@@ -39,9 +36,47 @@
       </block>
     </swiper>
 
+    <view class='userIcon' wx:if="{{hasUserInfo}}">
+    <view class='user-animate'>
+    <canvas style='width:100vw; height:200rpx;' canvas-id="firstCanvas"></canvas>
+      </view>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+
+      
+    </view>
+
     <view class='menu-index'>
+      <view class='menu-item' bindtap='toComic'>
+        <image src='../../icon/panda.png' mode='aspectFill'></image>
+        <view class='items-text'>
+          <text class='title'>奇幻岛</text>
+          <text class="about">好笑的、好看的、好玩的、有趣的都在这里</text>
+        </view>
+      </view>
       <view class='menu-item'>
-        <image src='../../icon/bee.png' mode='aspectFill'></image>
+        <image src='../../icon/bear.png' mode='aspectFill'></image>
+        <view class='items-text'>
+          <text class='title'>黑木森林</text>
+          <text class="about">好笑的、好玩的、有趣的都在这里</text>
+        </view>
+      </view>
+      <view class='menu-item'>
+        <image src='../../icon/tiger.png' mode='aspectFill'></image>
+        <view class='items-text'>
+          <text class='title'>黑白屋</text>
+          <text class="about">好笑的、好看的、好玩的、有趣的都在这里</text>
+        </view>
+      </view>
+       <view class='menu-item'>
+        <image src='../../icon/tiger.png' mode='aspectFill'></image>
+        <view class='items-text'>
+          <text class='title'>黑白屋</text>
+          <text class="about">好笑的、好看的、好玩的、有趣的都在这里</text>
+        </view>
+      </view>
+       <view class='menu-item'>
+        <image src='../../icon/tiger.png' mode='aspectFill'></image>
         <view class='items-text'>
           <text class='title'>黑白屋</text>
           <text class="about">好笑的、好看的、好玩的、有趣的都在这里</text>

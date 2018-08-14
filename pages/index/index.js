@@ -3,6 +3,7 @@
 var pub = require("../../utils/pub.js")
 const app = getApp()
 var arrIndex = 0;
+var appUrl = "showapi_appid=72331&&showapi_sign=e1825c1e5db6424b985601f3b498d370"
 
 Page({
   data: {
@@ -13,11 +14,7 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     display: true,
     textUrls: [],
-    imgUrls: [
-      'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
-    ],
+
   },
   //事件处理函数
   bindViewTap: function() {
@@ -59,7 +56,7 @@ Page({
     // 进行数组的筛选 
     var self = this
     arr.forEach(function(ele, index) {
-      if (ele.english.length < 100) {
+      if (ele.english.length < 80) {
         self.data.textUrls.push(ele);
       }
       var that = self
@@ -117,33 +114,33 @@ Page({
       url: 'https://route.showapi.com/213-1?showapi_appid=72331&&showapi_sign=e1825c1e5db6424b985601f3b498d370&&keyword="海阔天空"',
 
 */
-    
-     wx.request({
-       url: 'https://route.showapi.com/1211-1?showapi_appid=72331&&showapi_sign=e1825c1e5db6424b985601f3b498d370&&count=10',
-       success: res => {
-      
-         this.pickLength(res.data.showapi_res_body.data)
-        
-        
-       },
-       header: {
-         'content-type': 'application/json' // 默认值
-       },
-       fail: res => {
-         console.log(res)
-       },
-     })
-     
 
+    wx.request({
+      url: 'https://route.showapi.com/1211-1?' + appUrl + '&&count=10',
+      success: res => {
+        this.pickLength(res.data.showapi_res_body.data)
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      fail: res => {
+        console.log(res)
+      },
+    })
+
+    this.doCanvas('firstCanvas')
     wx.getStorage({
 
       // 首次加载 通过是否存有本地记录来判断是否需要打字效果
       key: 'key',
+
       success: function(res) {
         // 什么也不做
+
       },
       fail: () => {
         this.Typing(this.data.mottoType)
+
       }
     })
 
@@ -175,6 +172,36 @@ Page({
       key: "key",
       data: "login"
     })
+  },
+
+  toComic: function() {
+    let page = Math.ceil(Math.random() * 159)
+    wx.request({
+      url: 'https://route.showapi.com/255-1?' + appUrl + '&&type=10&&page='+ page,
+      success:res=>{
+        console.log(res.data.showapi_res_body.pagebean.contentlist)
+        app.globalData.comicArr = res.data.showapi_res_body.pagebean.contentlist
+        
+        wx.navigateTo({
+          url: '../comic/comic',
+        })
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      fail: res => {
+        pub.netErr()
+      },
+    })
+
+
+
+  },
+
+  doCanvas: (id) => {
+    // 这里将来会有一个canvas动画 暂时空着
+    // var context = wx.createCanvasContext(id)
 
   }
+
 })

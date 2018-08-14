@@ -1,0 +1,30 @@
+<view class='swiper'>
+  <view wx:for="{{comicArr}}" wx:key="1">
+
+      <view class='swiper-view'>
+        <view class='comic-title'>
+          <view class='title'>{{item.text}}</view>
+          <view class='timeAndSaw'>
+            <text class='time'>{{item.create_time}}</text>
+            <view class='saw-view'>
+              <image class='saw' src='../../icon/eye.png'></image>
+              <text class='saw-num'>{{sawNum}}</text>
+            </view>
+          </view>
+        </view>
+        
+        <view class='comic-body'>
+        <image class='body-img' src='{{item.image2}}'></image>
+        </view>
+        <view class='comic-user'>
+          <view class='user-view'>
+
+            <image src='{{item.profile_image}}' class='userIcon'></image>
+            <text class='userName'>{{item.name}}</text>
+          </view>
+
+        </view>
+
+      </view>
+  </view>
+  </view>
