@@ -1,4 +1,4 @@
-.wellcome{
+.wellcome {
   width: 100vw;
   height: 100vh;
   text-align: center;
@@ -6,50 +6,119 @@
   position: absolute;
 }
 
-.userinfo button{
+.userinfo button {
   width: 300rpx;
   font-weight: 300;
-  border:1rpx solid #e41212;
+  border: 1rpx solid #353535;
   position: absolute;
   bottom: 180rpx;
   left: 0;
   right: 0;
-  color: #e41212;
+  color: #353535;
   background: none;
 }
-.userinfo button:active{
-  background:#e41212; 
-  color:#fff;
-  opacity: .5;
+
+.userinfo button:active {
+  background: #353535;
+  color: #fff;
+  opacity: 0.5;
 }
-.userinfo-avatar{
+
+.userinfo-avatar {
   width: 128rpx;
   height: 128rpx;
   border-radius: 50%;
 }
-.userIcon{
+
+.userIcon {
   padding: 20rpx;
   display: flex;
   align-items: center;
   flex-direction: column;
   align-content: center;
-  
 }
 
-.user-motto{
-  color: #fff;
+.user-motto {
+  color: #353535;
   opacity: 1;
   font-size: 1rem;
+  font-weight: 200;
   line-height: 1.8rem;
-  text-shadow: 1px 1px 3px #353535;
-
 }
-.usermotto{
+
+.usermotto {
   margin-top: 15vh;
 }
 
-.ima-bg{
+.ima-bg {
   width: 100vw;
   height: 100vh;
   position: absolute;
+}
+
+.swiper-view {
+  width: 100vw;
+  height: 23vh;
+  overflow: hidden;
+}
+
+.index {
+  width: 100vw;
+  min-height: 100vh;
+  background: #353535;
+  position: absolute;
+}
+
+.swiper-view .border-view {
+  width: 95vw;
+  height: 20vh;
+  margin: auto;
+  border-radius: 8rpx;
+  margin-top: 10rpx;
+  position: relative;
+  background: #fff;
+}
+
+
+/*swiper*/
+.swiper-view .border-view::after, .swiper-view .border-view::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0rpx;
+  height: 0rpx;
+  border-radius: 50%;
+  border: 20rpx solid #454545;
+  transform: rotate(45deg);
+  top: calc(50% - 20rpx);
+}
+.swiper-view  .border-view::after {
+  border-right-color: transparent;
+  border-top-color: transparent;
+  right: -20rpx;
+}
+.swiper-view  .border-view::before {
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  left: -20rpx;
+}
+.en-text{
+  height: 100%;
+  box-sizing: border-box;
+  padding: 2em;
+  font-weight: 200;
+  font-size: .7rem;
+}
+.en-text text{
+  display: block;
+  margin-bottom: 1em;
+}
+swiper{
+  height: 22vh;
+  background: #454545;
+}
+
+.menu-index{
+  width: 100vw;
+  background: #fff;
 }

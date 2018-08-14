@@ -1,5 +1,6 @@
 //index.js
 //获取应用实例
+var pub = require("../../utils/pub.js")
 const app = getApp()
 var arrIndex = 0;
 
@@ -10,8 +11,13 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    display:"block",
-
+    display: true,
+    textUrls: [],
+    imgUrls: [
+      'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
+      'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
+      'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
+    ],
   },
   //事件处理函数
   bindViewTap: function() {
@@ -21,13 +27,12 @@ Page({
   },
 
   // 首次登陆，打字效果
-
   Typing: function(arr) {
     var newArr = arr.split('')
     let that = this;
     var obj = {}
     obj.typeTimer = setInterval(() => {
-      if (newArr.length  == arrIndex) {
+      if (newArr.length == arrIndex) {
         // 打字结束 做点别的
         console.log("打字结束")
         clearInterval(obj.typeTimer); // 清除定时器
@@ -50,30 +55,41 @@ Page({
       }
     }, 100)
   },
-
+  pickLength: function(arr) {
+    // 进行数组的筛选 
+    var self = this
+    arr.forEach(function(ele, index) {
+      if (ele.english.length < 100) {
+        self.data.textUrls.push(ele);
+      }
+      var that = self
+      self.setData({
+        textUrls: that.data.textUrls
+      })
+    })
+  },
   // 页面加载时 触发该函数
   onLoad: function() {
-    try{
+    try {
       var that = this
       wx.getStorage({
         key: 'key',
-        success: function (res) { 
+        success: function(res) {
           that.setData({
-            display:"none"
+            display: false
           })
         },
       })
-    }catch(e){
+    } catch (e) {
       console.log('不是第一次存储')
     }
-    
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
-        display:"none",
+
         hasUserInfo: true
       })
-     console.log(5555)
+      console.log(5555)
     } else if (this.data.canIUse) {
       // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
       // 所以此处加入 callback 以防止这种情况
@@ -88,50 +104,77 @@ Page({
       wx.getUserInfo({
         success: res => {
           app.globalData.userInfo = res.userInfo,
-          
-          this.setData({
-            userInfo: res.userInfo,
-       
-            hasUserInfo: true
-          })
+
+            this.setData({
+              userInfo: res.userInfo,
+              hasUserInfo: true
+            })
         }
       })
     }
     /*
-    wx.request({
+
       url: 'https://route.showapi.com/213-1?showapi_appid=72331&&showapi_sign=e1825c1e5db6424b985601f3b498d370&&keyword="海阔天空"',
-      success: res => {
-        console.log(res)
+
+*/
+    
+     wx.request({
+       url: 'https://route.showapi.com/1211-1?showapi_appid=72331&&showapi_sign=e1825c1e5db6424b985601f3b498d370&&count=10',
+       success: res => {
+      
+         this.pickLength(res.data.showapi_res_body.data)
+        
+        
+       },
+       header: {
+         'content-type': 'application/json' // 默认值
+       },
+       fail: res => {
+         console.log(res)
+       },
+     })
+     
+
+    wx.getStorage({
+
+      // 首次加载 通过是否存有本地记录来判断是否需要打字效果
+      key: 'key',
+      success: function(res) {
+        // 什么也不做
       },
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
-      fail: res => {
-        console.log(res)
-      },
+      fail: () => {
+        this.Typing(this.data.mottoType)
+      }
     })
-    */
-  
-    this.add()
-    console.log(this.data.display)
-    this.Typing(this.data.mottoType)
+
   },
 
-  add: function() {
-    console.log("add")
-  },
   getUserInfo: function(e) {
-    console.log(e)
+
+    if (e.detail.errMsg == "getUserInfo:ok") {
+      console.log("授权成功")
+      this.setData({
+        display: false
+      })
+
+    } else {
+      console.log("拒绝了授权")
+      wx.navigateBack({
+        delta: -1
+      })
+    }
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+
   },
-  setStorageIn:function(){
+  setStorageIn: function() {
     wx.setStorage({
       key: "key",
       data: "login"
     })
+
   }
 })

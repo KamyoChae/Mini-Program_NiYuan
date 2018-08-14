@@ -1,8 +1,8 @@
 <!--index.wxml ffeb3b style="width:{{width}}; height:{{height}}; border-radius:{{boderRadius}};opacity:{{opacity}}"-->
 <view class="container">
-  <image class='ima-bg' src='../../icon/bg.jpg' mode='aspectFill'></image>
-
-  <view class='wellcome' style='display:{{display}}'>
+  <!-- <image class='ima-bg' src='../../icon/bg.jpg' mode='aspectFill'></image>
+-->
+  <view class='wellcome' wx:if="{{display}}">
     <view class='animated'>
       <view></view>
       <view></view>
@@ -23,7 +23,31 @@
 
   </view>
 
-<view class='index'>
+  <view class='index' wx:if="{{!display}}">
+    <swiper autoplay="false" duration="500">
+      <block wx:for="{{textUrls}}" wx:key="1">
+        <swiper-item>
+          <view class='swiper-view'>
+            <view class='border-view'>
+              <view class='en-text'>
+                <text>{{item.english}}</text>
+                <text>{{item.chinese}}</text>
+              </view>
+            </view>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
 
-</view>
+    <view class='menu-index'>
+      <view class='menu-item'>
+        <image src='../../icon/bee.png' mode='aspectFill'></image>
+        <view class='items-text'>
+          <text class='title'>黑白屋</text>
+          <text class="about">好笑的、好看的、好玩的、有趣的都在这里</text>
+        </view>
+      </view>
+    </view>
+
+  </view>
 </view>
