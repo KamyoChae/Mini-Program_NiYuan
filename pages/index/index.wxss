@@ -84,6 +84,7 @@
   min-height: 100vh;
   background: #353535;
   position: absolute;
+  margin-bottom: 30rpx;
 }
 
 .swiper-view .border-view {

@@ -1,30 +1,43 @@
 <view class='swiper'>
-  <view wx:for="{{comicArr}}" wx:key="1">
 
-      <view class='swiper-view'>
-        <view class='comic-title'>
-          <view class='title'>{{item.text}}</view>
-          <view class='timeAndSaw'>
-            <text class='time'>{{item.create_time}}</text>
-            <view class='saw-view'>
-              <image class='saw' src='../../icon/eye.png'></image>
-              <text class='saw-num'>{{sawNum}}</text>
-            </view>
-          </view>
-        </view>
-        
-        <view class='comic-body'>
-        <image class='body-img' src='{{item.image2}}'></image>
-        </view>
-        <view class='comic-user'>
-          <view class='user-view'>
+  <view class='swiper-view'>
+    <view class='comic-title'>
+      <view class='title'>{{comicObj.text}}</view>
+    </view>
+    <view class='timeAndSaw'>
 
-            <image src='{{item.profile_image}}' class='userIcon'></image>
-            <text class='userName'>{{item.name}}</text>
-          </view>
-
-        </view>
-
+      <view class='saw-view'>
+        <image class='saw' src='../../icon/eye.png'></image>
+        <text class='saw-num'>{{sawNum}}</text>
       </view>
+      <text class='time'>{{comicObj.create_time}}</text>
+    </view>
+
+    <view class='comic-body'>
+      <image class='body-img' src='{{comicObj.image2}}' mode='widthFix'></image>
+    </view>
+
+    <view class='love-hate'>
+      <view class='love' bindtap='addHand' id="love">
+        <image src='{{loveHate1}}' class='hand' id="love"></image>
+        <text id="love">{{loveNum}}</text>
+      </view>
+      <view class='hate' bindtap='addHand' id="hate">
+        <image src='{{loveHate2}}' class='hand' id="hate"></image>
+        <text id="hate">{{hateNum}}</text>
+      </view>
+    </view>
+
+    <view class='comic-user'>
+      <view class='user-view'>
+
+        <image src='{{comicObj.profile_image}}' class='userIcon' mode='widthFix'></image>
+        <text class='userName'>{{comicObj.name}}</text>
+      </view>
+
+    </view>
+
   </view>
-  </view>
+
+  <view class='next' bindtap='next'>Next</view>
+</view>

@@ -115,6 +115,7 @@ Page({
 
 */
 
+    // 英语短句
     wx.request({
       url: 'https://route.showapi.com/1211-1?' + appUrl + '&&count=10',
       success: res => {
@@ -193,9 +194,6 @@ Page({
         pub.netErr()
       },
     })
-
-
-
   },
 
   doCanvas: (id) => {
