@@ -59,3 +59,31 @@ page {
     border-radius: 0%;
   }
 }
+
+.next {
+  animation: large 2s infinite ease-in-out;
+}
+
+@keyframes large {
+  0% {
+    width: 80rpx;
+    height: 80rpx;
+    color: #fff;
+    background: red;
+  }
+
+  50% {
+    width: 100rpx;
+    height: 100rpx;
+    color: #fff;
+      font-size: .8rem;
+    background: rgb(255, 102, 0);
+  }
+
+  100% {
+    width: 80rpx;
+    height: 80rpx;
+    color: #fff;
+    background: red;
+  }
+}

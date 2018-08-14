@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/music/music",
-    "pages/comic/comic"
+    "pages/comic/comic",
+    "pages/forest/forest"
   ],
   "window":{
     "backgroundTextStyle":"light",

@@ -51,14 +51,14 @@
         <image src='../../icon/panda.png' mode='aspectFill'></image>
         <view class='items-text'>
           <text class='title'>奇幻岛</text>
-          <text class="about">好笑的、好看的、好玩的、有趣的都在这里</text>
+          <text class="about">好笑的、好玩的、有趣的都在这里</text>
         </view>
       </view>
-      <view class='menu-item'>
+      <view class='menu-item' bindtap='toForest'>
         <image src='../../icon/bear.png' mode='aspectFill'></image>
         <view class='items-text'>
           <text class='title'>黑木森林</text>
-          <text class="about">好笑的、好玩的、有趣的都在这里</text>
+          <text class="about">小灰熊的一千零一个孤独瞬间</text>
         </view>
       </view>
       <view class='menu-item'>

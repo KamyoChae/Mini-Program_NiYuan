@@ -45,6 +45,7 @@ App({
   globalData: {
     userInfo: null,
     comicArr:[],
+    appUrl : "showapi_appid=72331&&showapi_sign=e1825c1e5db6424b985601f3b498d370"
   },
 
 })

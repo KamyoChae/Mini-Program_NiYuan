@@ -1,0 +1,39 @@
+<view class='swiper'>
+
+  <view class='swiper-view'>
+    <view class='comic-title'>
+      <view class='title'>{{forestObj.text}}</view>
+    </view>
+    <view class='timeAndSaw'>
+
+      <view class='saw-view'>
+        <image class='saw' src='../../icon/eye.png'></image>
+        <text class='saw-num'>{{sawNum}}</text>
+      </view>
+      <text class='time'>{{forestObj.create_time}}</text>
+    </view>
+
+    <view class='love-hate'>
+      <view class='love' bindtap='addHand' id="love">
+        <image src='{{loveHate1}}' class='hand' id="love"></image>
+        <text id="love">{{loveNum}}</text>
+      </view>
+      <view class='hate' bindtap='addHand' id="hate">
+        <image src='{{loveHate2}}' class='hand' id="hate"></image>
+        <text id="hate">{{hateNum}}</text>
+      </view>
+    </view>
+
+    <view class='comic-user'>
+      <view class='user-view'>
+
+        <image src='{{forestObj.profile_image}}' class='userIcon' mode='widthFix'></image>
+        <text class='userName'>{{forestObj.name}}</text>
+      </view>
+
+    </view>
+
+  </view>
+
+  <view class='next' bindtap='next'>Next</view>
+</view>

@@ -2,8 +2,9 @@
 //获取应用实例
 var pub = require("../../utils/pub.js")
 const app = getApp()
+
 var arrIndex = 0;
-var appUrl = "showapi_appid=72331&&showapi_sign=e1825c1e5db6424b985601f3b498d370"
+var appUrl = app.globalData.appUrl
 
 Page({
   data: {
@@ -174,7 +175,11 @@ Page({
       data: "login"
     })
   },
-
+  toForest:function(){
+    wx.navigateTo({
+      url: '../forest/forest',
+    })
+  },
   toComic: function() {
     let page = Math.ceil(Math.random() * 159)
     wx.request({
