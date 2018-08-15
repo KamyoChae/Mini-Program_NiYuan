@@ -6,6 +6,7 @@
 .swiper-view{
   position: relative;
   width: 95vw;
+  min-height: 100vh;
   margin: auto;
   box-sizing: border-box;
   padding: 5vw;
@@ -17,7 +18,7 @@
   min-height: 50rpx;
   margin: auto;
   border-radius: 8rpx;
-  border: 1rpx dashed #353535;
+  border: 1rpx dashed #644306;
 }
 .comic-title .title{
   font-size: .8rem;
@@ -51,7 +52,7 @@
 .comic-body{
   position: relative;
   
-  border: 1rpx dashed #353535;
+  border: 1rpx dashed #644306;
   border-radius: 8rpx;
   margin-bottom: 100rpx;
 }
@@ -84,7 +85,7 @@
   height: 50rpx;
   box-sizing: border-box;
   background: none;
-  border: 1rpx solid #353535;
+  border: 1rpx solid #644306;
   border-radius: 50%;
  left: calc(50% - 25rpx);
  animation: move 3s infinite alternate-reverse;
@@ -92,7 +93,7 @@
 .user-view::before{
   width: 0;
   height: 0;
-  border: 25rpx solid #353535;
+  border: 25rpx solid #644306;
   border-radius: 50%;
   left: calc(50% - 20rpx);
    animation: move 3s infinite alternate-reverse .5s ease-in-out;
@@ -135,7 +136,7 @@
   width: 130rpx;
   height: 130rpx;
   border-radius: 50%;
-  border: 1rpx dashed #353535 ;
+  border: 1rpx dashed #644306 ;
  
 }
 .user-view .userName{

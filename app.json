@@ -4,7 +4,8 @@
     "pages/logs/logs",
     "pages/music/music",
     "pages/comic/comic",
-    "pages/forest/forest"
+    "pages/forest/forest",
+    "pages/farm/farm"
   ],
   "window":{
     "backgroundTextStyle":"light",

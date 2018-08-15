@@ -1,3 +1,6 @@
+page{
+  background: #353535;
+}
 .swiper{
   width: 100vw;
   min-height: 100vh;
@@ -17,7 +20,7 @@
   min-height: 50rpx;
   margin: auto;
   border-radius: 8rpx;
-  border: 1rpx dashed #353535;
+  border: 1rpx dashed #23b8ff;
 }
 .comic-title .title{
   font-size: .8rem;
@@ -51,7 +54,7 @@
 .comic-body{
   position: relative;
   
-  border: 1rpx dashed #353535;
+  border: 1rpx dashed #23b8ff;
   border-radius: 8rpx;
   margin-bottom: 100rpx;
 }
@@ -60,6 +63,7 @@
   width: 100%;
   border-radius: 8rpx;
 }
+
 .comic-user{
   position: relative;
 }
@@ -67,7 +71,7 @@
   width: 100%;
   height: 300rpx;
   border-radius: 8rpx;
-  border: 1px solid #353535;
+  border: 1px solid #23b8ff;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -84,7 +88,7 @@
   height: 50rpx;
   box-sizing: border-box;
   background: none;
-  border: 1rpx solid #353535;
+  border: 1rpx solid #23b8ff;
   border-radius: 50%;
  left: calc(50% - 25rpx);
  animation: move 3s infinite alternate-reverse;
@@ -92,7 +96,7 @@
 .user-view::before{
   width: 0;
   height: 0;
-  border: 25rpx solid #353535;
+  border: 25rpx solid #23b8ff;
   border-radius: 50%;
   left: calc(50% - 20rpx);
    animation: move 3s infinite alternate-reverse .5s ease-in-out;
@@ -135,7 +139,7 @@
   width: 130rpx;
   height: 130rpx;
   border-radius: 50%;
-  border: 1rpx dashed #353535 ;
+  border: 1rpx dashed #23b8ff ;
  
 }
 .user-view .userName{

@@ -1,22 +1,4 @@
-
-function doRequest(Url) {
-  wx.request({
-    url: Url,
-    success: res => {
-      return res
-    },
-    header: {
-      'content-type': 'application/json' // 默认值
-    },
-    fail: res => {
-     wx.showToast({
-       title: '哎呀！网络出现了点问题',
-       icon:"none"
-     })
-    },
-  })
-}
-
+// 只能放工具类方法 不能包含this方法
 function add(){
   console.log("this is add")
 }
@@ -29,6 +11,5 @@ function netErr(){
 }
 module.exports = {
   add: add,
-  doRequest: doRequest,
   netErr: netErr,
 }

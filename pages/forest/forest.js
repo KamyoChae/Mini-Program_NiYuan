@@ -20,7 +20,7 @@ Page({
     sawNum: 100,
   },
   doRequest:function(){
-    
+
     var page = Math.ceil(Math.random() * 29)
     wx.request({
       url: 'https://route.showapi.com/255-1?' + appUrl + '&&type=29&&page=' + page,
@@ -32,7 +32,7 @@ Page({
           forestArr: res.data.showapi_res_body.pagebean.contentlist
         })
         this.setData({
-          forestObj:that.data.forestArr[indexNum]
+          forestObj: that.data.forestArr[indexNum]
         })
         this.render()
       },

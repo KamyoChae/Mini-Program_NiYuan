@@ -75,6 +75,7 @@ Page({
         success: function(res) {
           that.setData({
             display: false
+            
           })
         },
       })
@@ -126,7 +127,7 @@ Page({
         'content-type': 'application/json' // 默认值
       },
       fail: res => {
-        console.log(res)
+        pub.netErr()
       },
     })
 
@@ -174,6 +175,12 @@ Page({
       key: "key",
       data: "login"
     })
+  },
+  toFarm:function(){
+    wx.navigateTo({
+      url: '../farm/farm',
+    })
+   
   },
   toForest:function(){
     wx.navigateTo({

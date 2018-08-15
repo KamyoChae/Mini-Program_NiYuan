@@ -36,4 +36,5 @@
   </view>
 
   <view class='next' bindtap='next'>Next</view>
+
 </view>
