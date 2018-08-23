@@ -36,10 +36,8 @@ Page({
     })
     // 渲染页面
     var that = this
-    console.log(indexNum)
     if (once == 0) {
       once = 1
-      console.log("调用全局的数组了")
       // 默认 indexNum = 0 , 当第一次启动时，将全局的数组存储过来
       this.setData({
         comicArr: app.globalData.comicArr,
@@ -84,25 +82,21 @@ Page({
   },
 
   addHand: function(e) {
-    console.log(e.target.id)
     var that = this
     if (addHandNum) {
       if (e.target.id == "love") {
-        console.log(111)
         this.setData({
           loveNum: +that.data.loveNum + 1,
           loveHate1: "../../icon/love2.png"
         })
       }
       if (e.target.id == "hate") {
-        console.log(222)
         this.setData({
           hateNum: +that.data.hateNum + 1,
           loveHate2: "../../icon/love2.png"
         })
       }
       addHandNum = false
-      console.log()
     }
   },
 
@@ -118,7 +112,6 @@ Page({
     wx.request({
       url: 'https://route.showapi.com/255-1?' + appUrl + '&&type=10&&page=' + page,
       success: res => {
-        console.log(res.data.showapi_res_body.pagebean.contentlist)
         var that = this
         this.setData({
           comicArr: res.data.showapi_res_body.pagebean.contentlist

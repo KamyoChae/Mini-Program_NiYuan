@@ -1,5 +1,26 @@
 <view class='container'>
-  <view class='outer activeL'>
+    <view class='addHis' style='display:{{myHistory}}' bindtap='toNow'>+</view>
+  <view class='outer {{oActive}}'>
+    <view class='history' style='display:{{myHistory}}'>
+
+      <view class='hisItem' wx:for="{{mood}}" wx:key="">
+        <image class='user' src='{{userInfo.avatarUrl}}' mode='widthFix'></image>
+        <view class='hisText-view'>
+          <text class='userName'>{{userInfo.nickName}}</text>
+          <text class='hisText'>{{item.text}}</text>
+          <text class='time'>{{item.time}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view class='now' style="display:{{myNow}}">
+      <view class='now-form'>
+        <form bindsubmit="toSave">
+          <textarea cursor-spacing="10px" adjust-position="false" name="text" maxlength='520'></textarea>
+          <button type='primary' form-type='submit'>完成</button>
+        </form>
+      </view>
+    </view>
     <view class='wrapper '>
       <view class='show'>
         <view class='show-text'>
@@ -13,14 +34,12 @@
         </view>
       </view>
       <view class='buttonto'>
-        <view>过往云烟</view>
-        <view>此时此刻</view>
+        <view bindtap='toHistory'>过往云烟</view>
+        <view bindtap='toNow'>此时此刻</view>
       </view>
     </view>
 
-    <view class='history'>
-    
-    </view>
+
   </view>
 
 

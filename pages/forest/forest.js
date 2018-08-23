@@ -25,8 +25,6 @@ Page({
     wx.request({
       url: 'https://route.showapi.com/255-1?' + appUrl + '&&type=29&&page=' + page,
       success: res => {
-        console.log(res)
-        console.log(res.data.showapi_res_body.pagebean.contentlist)
         var that = this
         this.setData({
           forestArr: res.data.showapi_res_body.pagebean.contentlist
@@ -68,7 +66,6 @@ Page({
 
     }
     var newObj = this.data.forestObj
-    console.log(newObj)
     this.randomNum(newObj)
   },
   randomNum: function (obj) {
@@ -88,23 +85,19 @@ Page({
       loveHate2: "../../icon/love.png"
     })
     addHandNum = true;
-    console.log(indexNum)
     this.render()
   },
 
   addHand: function (e) {
-    console.log(e.target.id)
     var that = this
     if (addHandNum) {
       if (e.target.id == "love") {
-        console.log(111)
         this.setData({
           loveNum: +that.data.loveNum + 1,
           loveHate1: "../../icon/love2.png"
         })
       }
       if (e.target.id == "hate") {
-        console.log(222)
         this.setData({
           hateNum: +that.data.hateNum + 1,
           loveHate2: "../../icon/love2.png"

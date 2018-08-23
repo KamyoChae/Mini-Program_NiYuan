@@ -32,7 +32,6 @@ Page({
     obj.typeTimer = setInterval(() => {
       if (newArr.length == arrIndex) {
         // 打字结束 做点别的
-        console.log("打字结束")
         clearInterval(obj.typeTimer); // 清除定时器
       } else {
         that.setData({
@@ -80,7 +79,6 @@ Page({
         },
       })
     } catch (e) {
-      console.log('不是第一次存储')
     }
     if (app.globalData.userInfo) {
       this.setData({
@@ -88,7 +86,6 @@ Page({
 
         hasUserInfo: true
       })
-      console.log(5555)
     } else if (this.data.canIUse) {
       // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
       // 所以此处加入 callback 以防止这种情况
@@ -111,11 +108,6 @@ Page({
         }
       })
     }
-    /*
-
-      url: 'https://route.showapi.com/213-1?showapi_appid=72331&&showapi_sign=e1825c1e5db6424b985601f3b498d370&&keyword="海阔天空"',
-
-*/
 
     // 英语短句
     wx.request({
@@ -152,13 +144,13 @@ Page({
   getUserInfo: function(e) {
 
     if (e.detail.errMsg == "getUserInfo:ok") {
-      console.log("授权成功")
+      // console.log("授权成功")
       this.setData({
         display: false
       })
 
     } else {
-      console.log("拒绝了授权")
+     // console.log("拒绝了授权")
       wx.navigateBack({
         delta: -1
       })
@@ -197,9 +189,7 @@ Page({
     wx.request({
       url: 'https://route.showapi.com/255-1?' + appUrl + '&&type=10&&page='+ page,
       success:res=>{
-        console.log(res.data.showapi_res_body.pagebean.contentlist)
         app.globalData.comicArr = res.data.showapi_res_body.pagebean.contentlist
-        
         wx.navigateTo({
           url: '../comic/comic',
         })
