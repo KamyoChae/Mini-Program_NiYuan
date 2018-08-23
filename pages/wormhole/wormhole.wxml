@@ -1,0 +1,27 @@
+<view class='container'>
+  <view class='outer activeL'>
+    <view class='wrapper '>
+      <view class='show'>
+        <view class='show-text'>
+          <text>嗨！你还好吗</text>
+          <text>有什么不开心的事情都可以跟我说哦</text>
+          <text>放心啦</text>
+          <text>这里的故事不会有第二个人看到</text>
+          <text>你的故事 我一直都有在听呢</text>
+          <text>我是小霓霓</text>
+          <text>会一直陪伴着你的哦</text>
+        </view>
+      </view>
+      <view class='buttonto'>
+        <view>过往云烟</view>
+        <view>此时此刻</view>
+      </view>
+    </view>
+
+    <view class='history'>
+    
+    </view>
+  </view>
+
+
+</view>

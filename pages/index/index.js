@@ -182,6 +182,11 @@ Page({
     })
    
   },
+  toWormhole:function(){
+    wx.navigateTo({
+      url: '../wormhole/wormhole',
+    })
+  },
   toForest:function(){
     wx.navigateTo({
       url: '../forest/forest',

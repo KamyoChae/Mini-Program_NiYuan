@@ -64,22 +64,15 @@
       <view class='menu-item' bindtap='toFarm'>
         <image src='../../icon/deer.png' mode='aspectFill'></image>
         <view class='items-text'>
-          <text class='title'>南方农场</text>
-          <text class="about">黄牛大叔：趁年轻、且乐且欢歌！</text>
+          <text class='title'>南方牧场</text>
+          <text class="about">让小黄牛沉默的十万首欢乐曲子</text>
         </view>
       </view>
-       <view class='menu-item'>
-        <image src='../../icon/tiger.png' mode='aspectFill'></image>
+       <view class='menu-item' bindtap='toWormhole'>
+        <image src='../../icon/sheep.png' mode='aspectFill'></image>
         <view class='items-text'>
-          <text class='title'>黑白屋</text>
-          <text class="about">好笑的、好看的、好玩的、有趣的都在这里</text>
-        </view>
-      </view>
-       <view class='menu-item'>
-        <image src='../../icon/tiger.png' mode='aspectFill'></image>
-        <view class='items-text'>
-          <text class='title'>黑白屋</text>
-          <text class="about">好笑的、好看的、好玩的、有趣的都在这里</text>
+          <text class='title'>时间虫洞</text>
+          <text class="about">让时间记录你的每一个心情</text>
         </view>
       </view>
     </view>

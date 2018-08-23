@@ -1,11 +1,12 @@
-// pages/music/music.js
+// pages/wormhole/wormhole.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    activeL:"activeL",
+    activeR:"ativeR",
   },
 
   /**

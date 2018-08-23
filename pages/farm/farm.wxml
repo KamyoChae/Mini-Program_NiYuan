@@ -1,22 +1,28 @@
-<view class="music-view">
-  <view class='music-audio'>
-  <!--
-    <audio poster="{{poster}}" name="{{name}}" author="{{author}}" src="{{src}}" id="myAudio" controls loop></audio>
-    <audio poster="{{poster}}" name="{{name}}" author="{{author}}" src="{{src}}" id="myAudio" controls loop></audio>
-    -->
-  </view>
-</view>
+<view class='swrapper'>
 
 
-<view class='comic-user'>
+  <view class="music-view">
+  <audio  author="{{author}}" src="{{src}}" id="myAudio" controls loop></audio>
+    <view class='music-audio'>
 
-  <view class='user-view'>
-    <view class='middle-arc'>
-      <view class='arc-border'></view>
-      <image src='../../icon/deer.png' class='userIcon' mode='widthFix'></image>
     </view>
-
-    <text class='userName'>{{comicObj.name}}</text>
   </view>
-  <view class='user-view rate-view'></view>
+  <view class='input-view'>
+    <input type='text' focus='{{focus}}' class='{{inClass}}' bindinput='watchMusic' placeholder='搜索人名或歌名'></input>
+  </view>
+  <view class='serch-img {{fly}}' bindtap='showInput'>
+    <image src='../../icon/search.png'></image>
+  </view>
+
+  <view class='comic-user'>
+    <view class='user-view'>
+      <view class='middle-arc'>
+        <view class='arc-border'></view>
+        <image src='../../icon/deer.png' class='userIcon' mode='widthFix'></image>
+      </view>
+    </view>
+    <view class='user-view rate-view'></view>
+  </view>
+
+
 </view>

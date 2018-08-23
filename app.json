@@ -2,7 +2,7 @@
   "pages":[
     "pages/index/index",
     "pages/logs/logs",
-    "pages/music/music",
+    "pages/wormhole/wormhole",
     "pages/comic/comic",
     "pages/forest/forest",
     "pages/farm/farm"
