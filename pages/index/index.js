@@ -11,7 +11,6 @@ Page({
     mottoType: '嗨！，你好呀~，欢迎来到霓远音舍，各位音舍人已经等您很久啦，您需要切换位面才能使用对应的功能，音舍主人还在努力地搭建寒舍，请不要太着急哦，那么现在...，请开启您的时空旅程吧',
     motto: "",
     userInfo: {},
-    hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     display: true,
     textUrls: [],
